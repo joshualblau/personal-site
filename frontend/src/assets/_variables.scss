@@ -1,0 +1,38 @@
+$dark: #444545;
+$light: #FBFFFE;
+$primary: #4392F1;
+$secondary: #006494;
+$tertiary: #F9DA3B;
+
+%strong {
+  background-color: $secondary;
+  color: $tertiary;
+}
+
+%dark {
+  background-color: $dark;
+  color: $light;
+}
+
+%dark-hover {
+  background-color: $dark;
+  color: $light;
+  &:hover {
+    color: $tertiary;
+  }
+}
+
+%light {
+  background-color: $light;
+  color: $dark;
+}
+
+%primary {
+  background-color: $primary;
+  color: $light;
+}
+
+%primary-fade {
+  background-color: #4392F1CC;
+  color: $light;
+}

@@ -1,0 +1,26 @@
+@import "assets/variables";
+
+section.intro {
+  @extend %strong;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  width: 100%;
+  h1 {
+    text-transform: lowercase;
+    font-size: 2.5em;
+  }
+}
+
+main {
+  margin: 0; padding: 0;
+  width: 100%;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

@@ -1,0 +1,26 @@
+<main>
+  <section class="intro dark">
+    <h1>i write here.</h1>
+  </section>
+
+  <div class="container">
+    <section id="prose">
+      <h2>Prose</h2>
+      <article class="prose" *ngFor="let article of articles">
+        <h3>{{article.title}}</h3>
+        <p *ngFor="let paragraph of article.body">{{paragraph}}</p>
+      </article>
+    </section>
+
+    <section id="poetry">
+      <h2>Poetry</h2>
+      <article class="poetry" *ngFor="let poem of poems">
+        <h4>{{poem.title}}</h4>
+        <p *ngFor="let stanza of poem.body">
+          <span *ngFor="let line of stanza">{{line}}<br></span>
+        </p>
+      </article>
+    </section>
+  </div>
+
+</main>

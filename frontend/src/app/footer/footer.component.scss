@@ -1,0 +1,14 @@
+@import "../../assets/variables";
+
+footer {
+  @extend %dark;
+  width: 100%;
+  margin: 0;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  border-top: 1px solid $tertiary;
+  p {
+    text-align: center;
+    margin: auto;
+  }
+}

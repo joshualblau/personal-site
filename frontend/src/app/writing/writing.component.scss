@@ -1,0 +1,29 @@
+@import "../../assets/variables";
+
+.container {
+  @extend %light;
+  display: flex;
+
+  section {
+    overflow-y: scroll;
+
+    &#prose {
+      width: 70%;
+    }
+    &#poetry {
+      width: 30%;
+      border-left: 7px solid $secondary;
+    }
+
+    h2 {
+      @extend %dark;
+      text-align: center;
+      margin: 0;
+      padding: 0.5em;
+    }
+
+    article {
+      padding-left: 10px;
+    }
+  }
+}

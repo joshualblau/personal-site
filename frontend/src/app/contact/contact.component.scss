@@ -1,0 +1,25 @@
+@import "../../assets/variables";
+
+main {
+  @extend %light;
+  padding-bottom: 2em;
+  .intro {
+    margin-bottom: 5em;
+  }
+
+  #contact {
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+    }
+    a {
+      @extend %dark-hover;
+      display: block;
+      padding: 1em;
+      margin: 1em auto 1em auto;
+      width: 200px;
+      text-decoration: none;
+    }
+  }
+}

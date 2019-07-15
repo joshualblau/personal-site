@@ -1,0 +1,53 @@
+@import "../../assets/variables";
+
+main {
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .1;
+      z-index: -1;
+      background: url("../../assets/images/background-fractal.jpg") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    section {
+      text-align: center;
+      padding-top: 3em ;
+      padding-bottom: 3em;
+      width: 100%;
+
+      &.intro {
+        h1 {
+          margin-bottom: 0;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        width: 60%;
+        margin: auto;
+      }
+
+      &.human {
+        @extend %primary-fade;
+      }
+
+      &.professional {
+        color: $dark;
+      }
+    }
+
+}

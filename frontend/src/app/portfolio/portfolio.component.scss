@@ -1,0 +1,47 @@
+@import "../../assets/variables";
+
+main {
+  background-color: $light;
+  padding-bottom: 2em;
+
+  #intro {
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+  }
+
+  #cards {
+    @extend %primary-fade;
+    width: 70%;
+    height: 500px;
+    margin: 75px auto 75px auto;
+    padding: 75px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    align-content: space-around;
+
+    .card {
+      @extend %dark;
+      box-shadow: -4px 6px 3px $secondary;
+      padding: 0 20px 0 20px;
+      text-align: left;
+      width: 25%;
+      height: 190px;
+      margin: auto;
+      overflow-y: scroll;
+      border-radius: 5%;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
