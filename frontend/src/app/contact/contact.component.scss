@@ -2,13 +2,12 @@
 
 main {
   @extend %light;
-  padding-bottom: 2em;
-  .intro {
-    margin-bottom: 5em;
-  }
 
   #contact {
     text-align: center;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     img {
       border-radius: 50%;
@@ -20,6 +19,10 @@ main {
       margin: 1em auto 1em auto;
       width: 200px;
       text-decoration: none;
+
+      &#github {
+        margin-bottom: 0;
+      }
     }
   }
 }

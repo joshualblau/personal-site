@@ -27,12 +27,13 @@ main {
       width: 100%;
 
       &.intro {
-        h1 {
-          margin-bottom: 0;
-        }
         p {
           font-size: 14px;
         }
+      }
+
+      h2 {
+        margin-bottom: 1em;
       }
 
       p {

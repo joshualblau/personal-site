@@ -3,6 +3,7 @@ from flask import Flask, jsonify, send_from_directory
 import os
 
 app = Flask(__name__)
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/<path:path>', methods=['GET'])
 def static_proxy(path):
@@ -14,13 +15,10 @@ def root():
   return send_from_directory('./', 'index.html')
 
 
-base_folder = '../../posts'
-
 @app.route('/api/prose', methods=['GET'])
 def get_prose():
 
-    global base_folder
-    folder = base_folder + '/prose'
+    folder = 'prose'
 
     articles = []
 
@@ -35,8 +33,7 @@ def get_prose():
 @app.route('/api/poetry', methods=['GET'])
 def get_poetry():
 
-    global base_folder
-    folder = base_folder + '/poetry'
+    folder = 'poetry'
 
     poems = []
 
@@ -84,8 +81,18 @@ def process_poem(filename):
 
 
 if __name__ == '__main__':
-   app.run(host='127.0.0.1', port=8080, debug=True)
+   app.run()
 
 @app.errorhandler(500)
 def server_error(e):
   return 'An internal error occurred [main.py] %s' % e, 500
+
+# No caching at all for API endpoints.
+@app.after_request
+def add_header(response):
+    # response.cache_control.no_store = True
+    response.headers['Cache-Control'] = 'no-store, no-cache, must-\
+    revalidate, post-check=0, pre-check=0, max-age=0'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = '-1'
+    return response
